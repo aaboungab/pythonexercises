@@ -1,0 +1,7 @@
+print('Please enter your ISBN number?')
+ISBN = input()
+ISBN = list(map(int,ISBN))
+ISBN_12 = 10 - (( ISBN[0] + (3 * ISBN[1]) + ISBN[2] + (3 * ISBN[3]) + ISBN[4] + (3 * ISBN[5]) + ISBN[6] + (3 * ISBN[7]) + ISBN[8] + (3 * ISBN[9]) + ISBN[10] + (3 * ISBN[11]) ) % 10)
+ISBN.append(ISBN_12)
+for i in ISBN:
+    print(i, end="")
