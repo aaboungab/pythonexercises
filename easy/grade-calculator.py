@@ -1,13 +1,19 @@
 print('Hi, what is your name?')
 name = str(input())
 print("Hello there", name, '!')
-print('What is your maths mark?')
+
+#get marks for modules 
+print('What is your maths mark? /100')
 mathsmark = int(input())
-print('What is your chemistry mark?')
+print('What is your chemistry mark? /100')
 chemistrymark = int(input())
-print('What is your physics mark?')
+print('What is your physics mark? /100')
 physicsmark = int(input())
+
+#total mark calculator 
 totalmark = ((mathsmark+chemistrymark+physicsmark)/300)*100
+
+#depending on totalmark output is specific grade
 if totalmark >= 70:
     print("Your final grade is A")
 elif totalmark >= 60:
@@ -18,4 +24,6 @@ elif totalmark >= 40:
     print("Your final grade is D")
 else:
     print("You have failed!")
-print(totalmark)
+
+#format output to user
+print(f"{name} your final mark is {totalmark:.2f}%")
