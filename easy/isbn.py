@@ -1,14 +1,12 @@
-print('Please enter your ISBN number?')
-ISBN = input()
-#replace '-' with empty space
-ISBN = ISBN.replace('-','')
-#convert ISBN to INT
-ISBN = list(map(int,ISBN))
-ISBN_12 = 10 - (( ISBN[0] + (3 * ISBN[1]) + ISBN[2] + (3 * ISBN[3]) + ISBN[4] + (3 * ISBN[5]) + ISBN[6] + (3 * ISBN[7]) + ISBN[8] + (3 * ISBN[9]) + ISBN[10] + (3 * ISBN[11]) ) % 10)
-#add the 12th digit to ISBN
-ISBN.append(ISBN_12)
-print("ISBN:")
-#print ISBN in the correct format
-a = ISBN[0],ISBN[1],ISBN[2],'-',ISBN[3],'-',ISBN[4],ISBN[5],ISBN[6],'-',ISBN[7],ISBN[8],ISBN[9],ISBN[10],ISBN[11],ISBN[12]
-b =''.join(map(str,a))
-print(b)
+def last_digit(isbn):
+    #replace '-' with emptyp space 
+    isbn = isbn.replace('-', '')
+    #conver into integer
+    isbn = list(map(int, isbn))
+    #run the calculation for digit 12 for isbn
+    l = 10 - ((
+        isbn[0] + (3*isbn[1]) + isbn[2] + (3*isbn[3]) + isbn[4] + (3*isbn[5]) +
+        isbn[6] + (3*isbn[7]) + isbn[8] + (3*isbn[9]) + isbn[10] + (3*isbn[11])
+    ) % 10)
+    #format final input to align with isbn format
+    return(f'{isbn[0]}{isbn[1]}{isbn[2]}-{isbn[3]}-{isbn[4]}{isbn[5]}{isbn[6]}-{isbn[7]}{isbn[8]}{isbn[9]}{isbn[10]}{isbn[11]}-{l}')
